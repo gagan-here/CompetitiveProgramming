@@ -40,7 +40,7 @@ public class TwoSum {
     }
 
     public static void main(String[] args) {
-        int[] ints = TwoSum.twoSum(new int[]{1, 3, 5, 4}, 9);
+        int[] ints = twoSum(new int[]{1, 3, 5, 4}, 9);
         System.out.println(Arrays.toString(ints));
     }
 }

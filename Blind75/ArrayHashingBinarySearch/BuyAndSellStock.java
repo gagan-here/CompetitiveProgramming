@@ -40,7 +40,7 @@ public class BuyAndSellStock {
 
     public static void main(String[] args) {
         int[] prices = {7,1,5,6,4};
-        int max_profit = BuyAndSellStock.maxProfit(prices);
+        int max_profit = maxProfit(prices);
         System.out.println(max_profit);
     }
 }
