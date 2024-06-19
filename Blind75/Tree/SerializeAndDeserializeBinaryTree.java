@@ -9,11 +9,12 @@ package Blind75.Tree;
  * algorithm should work. You just need to ensure that a binary tree can be serialized to a string and this string can be deserialized
  * to the original tree structure.
  * <p>
- * 1 <br>
- * /  \ <br>
- * 2    3 <br>
- * / \ <br>
- * 4    5
+ *  Binary Tree Example: <br>
+ *              1 <br>
+ *            /  \ <br>
+ *          2     3 <br>
+ *               / \ <br>
+ *              4   5
  * <p>
  * In serialization, you will be given a binary tree like above and you have to convert it to a string.<br>
  * For above binary tree the string while serializing would be [1,2,3,#,#,4,5,#,#,#,#] <br>
