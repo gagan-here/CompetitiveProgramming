@@ -90,6 +90,6 @@ public class SerializeAndDeserializeBinaryTree {
 
         // Deserialize the data back to a tree
         TreeNode deserializedRoot = deserialize(serializedData);
-        System.out.println("Deserialization completed." + deserializedRoot);
+        System.out.println("Deserialization completed.");
     }
 }
