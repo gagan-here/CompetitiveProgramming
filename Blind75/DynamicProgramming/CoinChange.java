@@ -35,6 +35,8 @@ public class CoinChange {
         for (int i = 1; i <= amount; i++) {
             for (int coin : coins) {
                 if (coin <= i) {
+                    // Here, 1 + minCoins[i - coin], represents taking one coin of current coin value and
+                    // the minimum number of coins required to make up the remaining amount i - coin.
                     minCoins[i] = Math.min(minCoins[i], 1 + minCoins[i - coin]);
                 }
             }
