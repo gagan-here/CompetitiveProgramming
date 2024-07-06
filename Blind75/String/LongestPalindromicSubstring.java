@@ -16,32 +16,34 @@ package Blind75.String;
  * Output: "bb"
  */
 public class LongestPalindromicSubstring {
-    static int resultStart;
-    static int resultLength;
 
     public static String longestPalindrome(String s) {
-        int strLength = s.length();
-        if (strLength < 2) {
+        if (s.length() <= 1) {
             return s;
         }
-        for (int start = 0; start < strLength - 1; start++) {
-            expandRange(s, start, start);
-            expandRange(s, start, start + 1);
+
+        String maxStr = s.substring(0, 1);
+
+        for (int i = 0; i < s.length() - 1; i++) {
+            String odd = expandFromCenter(s, i, i); // check for pallindromes like aba
+            String even = expandFromCenter(s, i, i + 1); // check for pallindromes like abba
+
+            if (odd.length() > maxStr.length()) {
+                maxStr = odd;
+            }
+            if (even.length() > maxStr.length()) {
+                maxStr = even;
+            }
         }
-        return s.substring(resultStart, resultStart + resultLength);
+        return maxStr;
     }
 
-    private static void expandRange(String str, int begin, int end) {
-        while (begin >= 0 && end < str.length() &&
-                str.charAt(begin) == str.charAt(end)) {
+    private static String expandFromCenter(String str, int begin, int end) {
+        while (begin >= 0 && end < str.length() && str.charAt(begin) == str.charAt(end)) {
             begin--;
             end++;
         }
-        if (resultLength < end - begin - 1) {
-            resultStart = begin + 1;
-            resultLength = end - begin - 1;
-
-        }
+        return str.substring(begin + 1, end);
     }
 
     public static void main(String[] args) {
