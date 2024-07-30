@@ -26,6 +26,17 @@ import java.util.Queue;
  * Similarly, while deserializing the string "1 2 3 # # 4 5 # # # #" should be converted to binary tree like above
  */
 public class SerializeAndDeserializeBinaryTree {
+
+    public static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
+    }
+
     public static String serialize(TreeNode root) {
         if (root == null) {
             return "";
