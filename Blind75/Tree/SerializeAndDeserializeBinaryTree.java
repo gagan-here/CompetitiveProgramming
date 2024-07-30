@@ -47,7 +47,7 @@ public class SerializeAndDeserializeBinaryTree {
     }
 
     public static TreeNode deserialize(String data) {
-        if (data == "") {
+        if (data.isEmpty()) {
             return null;
         }
         Queue<TreeNode> q = new LinkedList<>();
