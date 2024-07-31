@@ -24,6 +24,7 @@ import java.util.Queue;
  * Here, # means the root node doesn't have a left or right subtree
  * <p>
  * Similarly, while deserializing the string "1 2 3 # # 4 5 # # # #" should be converted to binary tree like above
+ * Here we are using inorder traversal for serialization and deserialization of binary tree
  */
 public class SerializeAndDeserializeBinaryTree {
 
