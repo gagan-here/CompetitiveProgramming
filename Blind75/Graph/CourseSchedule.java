@@ -28,6 +28,9 @@ import java.util.Queue;
  * you should also have finished course 1. So it is impossible. <br>
  */
 public class CourseSchedule {
+
+    // implementation using breadth first search
+
     public static boolean canFinish(int numCourses, int[][] prerequisites) {
         ArrayList[] graph = new ArrayList[numCourses];
         int[] degree = new int[numCourses];
@@ -69,7 +72,7 @@ public class CourseSchedule {
     public static void main(String[] args) {
 
         int numCourses1 = 4;
-        int[][] prerequisites1 = {{1, 0}, {0,1}};
+        int[][] prerequisites1 = {{1, 0}, {0, 1}};
         boolean result1 = canFinish(numCourses1, prerequisites1);
         System.out.println("Can finish all courses (Example 1)? " + result1);
 
