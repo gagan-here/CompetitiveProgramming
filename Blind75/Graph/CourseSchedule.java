@@ -32,6 +32,7 @@ public class CourseSchedule {
     // implementation using breadth first search
 
     public static boolean canFinish(int numCourses, int[][] prerequisites) {
+//        e.g. prerequisites = {{1, 0}, {0, 1}}
         ArrayList[] graph = new ArrayList[numCourses];
         int[] degree = new int[numCourses];
         Queue queue = new LinkedList();
