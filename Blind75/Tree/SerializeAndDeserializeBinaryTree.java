@@ -39,6 +39,12 @@ public class SerializeAndDeserializeBinaryTree {
     }
 
     public static String serialize(TreeNode root) {
+        //      1
+        //     / \
+        //    2   3
+        //       / \
+        //      4   5
+
         if (root == null) {
             return "";
         }
@@ -59,6 +65,7 @@ public class SerializeAndDeserializeBinaryTree {
     }
 
     public static TreeNode deserialize(String data) {
+//        1 2 3 # # 4 5 # # # #"
         if (data.isEmpty()) {
             return null;
         }
