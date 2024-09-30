@@ -79,12 +79,12 @@ public class CourseSchedule {
 
         int numCourses2 = 4;
         int[][] prerequisites2 = {{1, 0}, {2, 0}, {3, 1}, {3, 2}};
-        boolean result2 = canFinish(numCourses1, prerequisites2);
+        boolean result2 = canFinish(numCourses2, prerequisites2);
         System.out.println("Can finish all courses (Example 1)? " + result2);
 
         int numCourses3 = 2;
         int[][] prerequisites3 = {{1, 0}};
-        boolean result3 = canFinish(numCourses2, prerequisites3);
+        boolean result3 = canFinish(numCourses3, prerequisites3);
         System.out.println("Can finish all courses (Example 2)? " + result3);
     }
 }
