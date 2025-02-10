@@ -72,7 +72,10 @@ public class CourseSchedule {
     // Main method to test the canFinish function
     public static void main(String[] args) {
 
-        int numCourses1 = 4;
+        // numCourses = highest course + 1.
+        // In {{1, 0}, {0, 1}}, highest course is 1. So, numcourses = 1 + 1 = 2
+
+        int numCourses1 = 2;
         int[][] prerequisites1 = {{1, 0}, {0, 1}};
         boolean result1 = canFinish(numCourses1, prerequisites1);
         System.out.println("Can finish all courses (Example 1)? " + result1);
@@ -80,11 +83,11 @@ public class CourseSchedule {
         int numCourses2 = 4;
         int[][] prerequisites2 = {{1, 0}, {2, 0}, {3, 1}, {3, 2}};
         boolean result2 = canFinish(numCourses2, prerequisites2);
-        System.out.println("Can finish all courses (Example 1)? " + result2);
+        System.out.println("Can finish all courses (Example 2)? " + result2);
 
         int numCourses3 = 2;
         int[][] prerequisites3 = {{1, 0}};
         boolean result3 = canFinish(numCourses3, prerequisites3);
-        System.out.println("Can finish all courses (Example 2)? " + result3);
+        System.out.println("Can finish all courses (Example 3)? " + result3);
     }
 }
