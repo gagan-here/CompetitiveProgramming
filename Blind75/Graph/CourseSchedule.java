@@ -2,6 +2,7 @@ package Blind75.Graph;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 /**
@@ -26,47 +27,73 @@ import java.util.Queue;
  * Explanation: There are a total of 2 courses to take. <br>
  * To take course 1 you should have finished course 0, and to take course 0 <br>
  * you should also have finished course 1. So it is impossible. <br>
+ *
+ * <p><b>graph:</b></p>
+ * Represents a directed graph where each course points to the courses that depend on it.
+ *
+ * <p>The graph is implemented as an array of ArrayLists. Each index in the array corresponds
+ * to a course, and the list at graph[i] contains all the courses that have course 'i' as a prerequisite.
+ * This helps in visualizing course dependencies and managing course ordering.</p>
+ *
+ * <p><b>degree:</b></p>
+ * Stores the number of prerequisites (incoming edges) for each course.
+ *
+ * <p>The degree array helps track how many prerequisites a course has. A course with an
+ * indegree of 0 means that it has no dependencies and can be taken immediately. This array is
+ * updated dynamically as courses are processed.</p>
+ *
+ * <p><b>queue:</b></p>
+ * A queue used to perform Breadth-First Search (BFS) on the course dependency graph.
+ *
+ * <p>The queue initially contains all courses with no prerequisites (indegree 0).
+ * As we process courses, we remove them from the queue, reduce the indegree of dependent courses,
+ * and add newly eligible courses (with indegree 0) to the queue.</p>
  */
+
 public class CourseSchedule {
 
     // implementation using breadth first search
 
     public static boolean canFinish(int numCourses, int[][] prerequisites) {
 //        e.g. prerequisites = {{1, 0}, {0, 1}}
-        ArrayList[] graph = new ArrayList[numCourses];
+        List<Integer>[] graph = new ArrayList[numCourses];
         int[] degree = new int[numCourses];
-        Queue queue = new LinkedList();
+        Queue<Integer> queue = new LinkedList<>();
         int count = 0;
 
         for (int i = 0; i < numCourses; i++)
-            graph[i] = new ArrayList();
+            graph[i] = new ArrayList<>();
 
-        for (int i = 0; i < prerequisites.length; i++) {
-            degree[prerequisites[i][1]]++;
-            graph[prerequisites[i][0]].add(prerequisites[i][1]);
+        // Build the graph and fill in-degree array
+        for (int[] prerequisite : prerequisites) {
+            int course = prerequisite[0];
+            int prereq = prerequisite[1];
+            degree[prereq]++;
+            graph[course].add(prereq);
         }
+
         for (int i = 0; i < degree.length; i++) {
+            // If a course’s indegree is 0 (meaning it has no prerequisites),
+            // we add it to the queue because it can be taken immediately.
             if (degree[i] == 0) {
                 queue.add(i);
                 count++;
             }
         }
 
-        while (queue.size() != 0) {
-            int course = (int) queue.poll();
-            for (int i = 0; i < graph[course].size(); i++) {
-                int pointer = (int) graph[course].get(i);
-                degree[pointer]--;
-                if (degree[pointer] == 0) {
-                    queue.add(pointer);
+        // Process the courses using BFS
+        while (!queue.isEmpty()) {
+            int course = queue.poll();
+            for (int nextCourse : graph[course]) {
+                degree[nextCourse]--;
+                if (degree[nextCourse] == 0) {
+                    queue.add(nextCourse);
                     count++;
                 }
             }
         }
-        if (count == numCourses)
-            return true;
-        else
-            return false;
+
+        return count == numCourses;
     }
 
     // Main method to test the canFinish function
