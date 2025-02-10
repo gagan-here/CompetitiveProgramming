@@ -27,10 +27,6 @@ package Blind75.DynamicProgramming;
  * </pre>
  *
  * For more details, see: <a href="https://leetcode.com/problems/unique-paths/description/">Leetcode Problem: Unique Paths</a>
- *
- * @param m the number of rows in the grid
- * @param n the number of columns in the grid
- * @return the number of unique paths to reach the bottom-right corner of the grid
  */
 
 public class UniquePaths {
