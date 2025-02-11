@@ -12,15 +12,19 @@ import java.util.Queue;
  * algorithm should work. You just need to ensure that a binary tree can be serialized to a string and this string can be deserialized
  * to the original tree structure.
  * <p>
- *  Binary Tree Example: <br>
- *              1 <br>
- *            /  \ <br>
- *          2     3 <br>
- *               / \ <br>
- *              4   5
- * <p>
+ * Binary tree example :
+ *
+ * <pre>
+ *                1
+ *               / \
+ *              /   \
+ *             2     3
+ *                  / \
+ *                 /   \
+ *                4     5
+ * </pre>
  * In serialization, you will be given a binary tree like above and you have to convert it to a string.<br>
- * For above binary tree the string while serializing would be "1 2 3 # # 4 5 # # # #" <br>
+ * For above binary tree the string while serializing would be <b>1 2 3 # # 4 5 # # # #</b> <br>
  * Here, # means the root node doesn't have a left or right subtree
  * <p>
  * Similarly, while deserializing the string "1 2 3 # # 4 5 # # # #" should be converted to binary tree like above
@@ -65,7 +69,7 @@ public class SerializeAndDeserializeBinaryTree {
     }
 
     public static TreeNode deserialize(String data) {
-//        1 2 3 # # 4 5 # # # #"
+//        1 2 3 # # 4 5 # # # #
         if (data.isEmpty()) {
             return null;
         }
