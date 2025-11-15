@@ -5,15 +5,14 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-/**
- * Performs a Breadth-First Search (BFS) traversal on a graph starting from vertex 0.
- *
- * <p>The graph is represented as an adjacency list, where each index corresponds
- * to a vertex and contains a list of its neighbors. The method returns the order
- * in which vertices are visited.</p>
- */
-
 public class BFS {
+    /**
+     * Performs BFS on a graph starting from node 0.
+     *
+     * @param v   number of vertices in the graph (vertices are 0..v-1)
+     * @param adj adjacency list where adj.get(i) contains neighbors of vertex i
+     * @return list of vertices in BFS order starting from 0
+     */
     public List<Integer> bfsOfGraph(int v, List<ArrayList<Integer>> adj) {
 
         ArrayList<Integer> bfs = new ArrayList<>();
@@ -26,7 +25,7 @@ public class BFS {
         while (!q.isEmpty()) {
             Integer node = q.poll();
             bfs.add(node);
-            
+
             for (Integer it : adj.get(node)) {
                 if (!vis[it]) {
                     vis[it] = true;
