@@ -38,6 +38,20 @@ public class BFS {
         return bfs;
     }
 
+    /**
+     * Example main — reads a graph and prints BFS order starting from 0.
+     * <p>
+     * Input format:
+     * First line: v e
+     * Next e lines: u v   (edge between u and v) — 0-based vertices assumed
+     * <p>
+     * Example: <br>
+     * 5 4 <br>
+     * 0 1 <br>
+     * 0 2 <br>
+     * 1 3 <br>
+     * 2 4 <br>
+     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
