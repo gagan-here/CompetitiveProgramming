@@ -4,7 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DFS {
-    public static void dfs(int node, boolean vis[], ArrayList<ArrayList<Integer>> adj, ArrayList<Integer> ls) {
+    public static void dfs(int node, boolean[] vis, List<ArrayList<Integer>> adj, List<Integer> ls) {
+        vis[node] = true;
+        ls.add(node);
+
+        for (Integer it : adj.get(node)) {
+            if (!vis[it]) {
+                dfs(it, vis, adj, ls);
+            }
+        }
     }
 
     public List<Integer> dfsOfGraph(int v, List<ArrayList<Integer>> adj) {
@@ -20,6 +28,5 @@ public class DFS {
 
         return ls;
     }
-
 }
 
