@@ -34,16 +34,16 @@ public class DFS {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter number of vertices and edges: ");
-        int V = sc.nextInt();
-        int E = sc.nextInt();
+        int vertex = sc.nextInt();
+        int edges = sc.nextInt();
 
-        ArrayList<ArrayList<Integer>> adj = new ArrayList<>(V);
-        for (int i = 0; i < V; i++) {
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>(vertex);
+        for (int i = 0; i < vertex; i++) {
             adj.add(new ArrayList<>());
         }
 
         System.out.println("Enter edges (u v) — 0-based indices:");
-        for (int i = 0; i < E; i++) {
+        for (int i = 0; i < edges; i++) {
             int u = sc.nextInt();
             int v = sc.nextInt();
 
