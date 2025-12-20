@@ -52,7 +52,7 @@ public class DFS {
         }
 
         DFS dfs = new DFS();
-        ArrayList<Integer> dfsOrder = dfs.dfsOfGraph(V, adj);
+        ArrayList<Integer> dfsOrder = dfs.dfsOfGraph(vertex, adj);
 
         System.out.println("DFS traversal starting from node 0:");
         for (int node : dfsOrder) {
