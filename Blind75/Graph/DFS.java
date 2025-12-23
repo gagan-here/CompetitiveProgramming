@@ -37,7 +37,7 @@ public class DFS {
         int vertex = sc.nextInt();
         int edges = sc.nextInt();
 
-        ArrayList<ArrayList<Integer>> adj = new ArrayList<>(vertex);
+        List<List<Integer>> adj = new ArrayList<>(vertex);
         for (int i = 0; i < vertex; i++) {
             adj.add(new ArrayList<>());
         }
