@@ -16,7 +16,7 @@ public class DFS {
         }
     }
 
-    public List<Integer> dfsOfGraph(int v, List<ArrayList<Integer>> adj) {
+    public List<Integer> dfsOfGraph(int v, List<List<Integer>> adj) {
         ArrayList<Integer> ls = new ArrayList<>();
 
         if (v == 0) {
