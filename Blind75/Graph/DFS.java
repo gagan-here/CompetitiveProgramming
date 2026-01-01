@@ -4,6 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Implements Depth First Search (DFS) traversal for a graph
+ * represented using an adjacency list.
+ <br><br>
+ * The traversal starts from vertex 0 and visits all reachable
+ * vertices using recursion.
+ */
 public class DFS {
     public static void dfs(int node, boolean[] vis, List<List<Integer>> adj, List<Integer> ls) {
         vis[node] = true;
