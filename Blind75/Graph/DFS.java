@@ -12,6 +12,14 @@ import java.util.Scanner;
  * vertices using recursion.
  */
 public class DFS {
+    /**
+     * Performs recursive Depth First Search from a given node.
+     *
+     * @param node current vertex being visited
+     * @param vis  boolean array to track visited vertices
+     * @param adj  adjacency list representing the graph
+     * @param ls   list to store DFS traversal order
+     */
     public static void dfs(int node, boolean[] vis, List<List<Integer>> adj, List<Integer> ls) {
         vis[node] = true;
         ls.add(node);
