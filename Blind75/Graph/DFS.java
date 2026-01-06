@@ -31,6 +31,13 @@ public class DFS {
         }
     }
 
+    /**
+     * Returns the DFS traversal of the graph starting from vertex 0.
+     *
+     * @param v   number of vertices in the graph
+     * @param adj adjacency list representation of the graph
+     * @return list containing vertices in DFS traversal order
+     */
     public List<Integer> dfsOfGraph(int v, List<List<Integer>> adj) {
         List<Integer> ls = new ArrayList<>();
 
