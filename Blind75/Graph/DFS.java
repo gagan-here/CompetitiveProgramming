@@ -52,6 +52,13 @@ public class DFS {
         return ls;
     }
 
+    /**
+     * Driver method to read graph input and display DFS traversal.
+     *
+     * Input format:
+     * - First line: number of vertices and edges
+     * - Next lines: edges in the form (u v) using 0-based indexing
+     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
