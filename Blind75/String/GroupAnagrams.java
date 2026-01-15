@@ -41,6 +41,10 @@ public class GroupAnagrams {
         return new ArrayList<>(anagramsMap.values());
     }
 
+    /**
+     * Driver method
+     * @param args
+     */
     public static void main(String[] args) {
         String[] words = {"eat","tea","tan","ate","nat","bat"};
         List<List<String>> anagrams = groupAnagrams(words);
