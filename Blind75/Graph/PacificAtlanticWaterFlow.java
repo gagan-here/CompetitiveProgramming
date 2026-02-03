@@ -17,5 +17,10 @@ public class PacificAtlanticWaterFlow {
         if (heights == null || heights.length == 0 || heights[0].length == 0)
             return res;
 
+        int row = heights.length;
+        int col = heights[0].length;
+        boolean[][] pacific = new boolean[row][col];
+        boolean[][] atlantic = new boolean[row][col];
+
     }
 }
